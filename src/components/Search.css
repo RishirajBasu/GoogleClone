@@ -1,0 +1,23 @@
+.search__input{
+    display: flex;
+    align-items: center;
+    border: 1px solid lightgray;
+    height: 30px;
+    padding: 10px 20px;
+    border-radius: 999px;
+    width: 75vw;
+    margin: 0 auto;
+    /* margin-top: 10px; */
+    max-width: 560px;
+}
+/* making the input field aligned with its container's(search__input) style so that the input field is not distinctly visible outside */
+.search__input>input{
+    flex: 1;
+    padding: 10px 20px;
+    font-size: medium;
+    border: none;
+}
+/* on-focusing on the input field, this help to remove the outline border that is added by default */
+.search__input>input:focus{
+    outline-width: 0;
+}

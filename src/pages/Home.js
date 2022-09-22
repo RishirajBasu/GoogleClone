@@ -1,10 +1,12 @@
 import React from 'react'
-// import './pages/Home.css'
+import './Home.css'
 import {Link} from 'react-router-dom'
+import AppsIcon from '@mui/icons-material/Apps';
+import { Avatar } from '@mui/material';
+import Search from '../components/Search';
 function Home() {
   return (
     <div className='home'>
-      <h1>Home page</h1>
      <div className="home__header">
         <div className="home__headerLeft">
             {/* link */}
@@ -18,11 +20,16 @@ function Home() {
             {/* link */}
             <Link to='/images'>images</Link>
             {/* icon - mui */}
+            <AppsIcon/>
             {/* avatar - mui */}
+            <Avatar src="./images/RishirajBasuProfile.jpeg"/>
         </div>
      </div>
      <div className="home__body">
-      
+      <img src="./images/googles-new-logo.gif" alt="" />
+      <div className="home__inputContainer">
+        <Search/>
+      </div>
      </div>
     </div>
   )
