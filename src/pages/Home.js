@@ -16,9 +16,9 @@ function Home() {
         </div>
         <div className="home__headerRight">
             {/* link */}
-            <Link to='/gmail'>gmail</Link>
+            <Link to='/gmail'>Gmail</Link>
             {/* link */}
-            <Link to='/images'>images</Link>
+            <Link to='/images'>Images</Link>
             {/* icon - mui */}
             <AppsIcon/>
             {/* avatar - mui */}
