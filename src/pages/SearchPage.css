@@ -1,0 +1,30 @@
+.searchPage__logo{
+    object-fit: contain;
+    height: 70px;
+    margin-right: 50px;
+
+}
+.seachPage__header{
+    display: flex;
+    position: sticky;
+    top:0;
+    background-color: white;
+    /* so that the search result is always below the search header */
+    z-index: 100;
+    align-items: center;
+    padding: 30px;
+    border-bottom: 1px solid lightgray;
+    margin-left: 20px;
+}
+/* from the search page > inside the search component> selecting the search class given to its parent form > selecting the search__input class and redefining all the styling that it has */
+.seachPage__headerBody> .search> .search__input{
+    margin-top: 0px;
+    width: unset;
+    margin: unset;
+    max-width: unset;
+}
+/* aligning the input field in line with the google logo */
+.seachPage__headerBody> .search{
+    display: flex;
+    align-items: center;
+}
