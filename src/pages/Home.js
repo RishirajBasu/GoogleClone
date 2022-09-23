@@ -28,7 +28,9 @@ function Home() {
      <div className="home__body">
       <img src="./images/googles-new-logo.gif" alt="" />
       <div className="home__inputContainer">
-        <Search/>
+        <Search />
+        {/* This will hide the buttons below the search bar */}
+        {/* <Search hideButtons/> */}
       </div>
      </div>
     </div>
