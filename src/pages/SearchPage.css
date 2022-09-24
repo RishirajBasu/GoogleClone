@@ -11,15 +11,15 @@
     background-color: white;
     /* so that the search result is always below the search header */
     z-index: 100;
-    align-items: center;
+    align-items: flex-start;
     padding: 30px;
     border-bottom: 1px solid lightgray;
     margin-left: 20px;
 }
 /* from the search page > inside the search component> selecting the search class given to its parent form > selecting the search__input class and redefining all the styling that it has */
 .seachPage__headerBody> .search> .search__input{
-    margin-top: 0px;
-    width: unset;
+    margin-top: 0;
+    width: 100%;
     margin: unset;
     max-width: unset;
 }
@@ -27,4 +27,30 @@
 .seachPage__headerBody> .search{
     display: flex;
     align-items: center;
+}
+.searchPage__options{
+    display: flex;
+    align-items: center;
+    color: gray;
+    margin-top: 20px;
+    
+}
+.searchPage__optionsLeft, .searchPage__optionsRight{
+    display: flex;
+}
+/* the link tag in the jsx is treated as anchor tags in css */
+.searchPage__optionsLeft a, .searchPage__optionsRight a{
+    text-decoration: none;
+    color: gray;
+}
+.searchPage__optionsRight{
+    margin-left: 80px;
+}
+.searchPage__option{
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+.searchPage__option a{
+    margin-left: 5px;
 }
