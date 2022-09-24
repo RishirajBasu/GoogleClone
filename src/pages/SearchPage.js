@@ -11,7 +11,7 @@ import MoreVertOutlinedIcon from '@mui/icons-material/MoreVertOutlined';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import { Image, LocalOfferOutlined } from "@mui/icons-material";
 import { Avatar } from "@mui/material";
-import SettingsIcon from '@mui/icons-material/Settings';
+import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import AppsIcon from '@mui/icons-material/Apps';
 function SearchPage() {
   // here we are getting the search input from the data layer (context API) as term
@@ -74,7 +74,7 @@ function SearchPage() {
             </div>
           </div>
         </div>
-        <SettingsIcon className="searchPage__settings"/>
+        <SettingsOutlinedIcon className="searchPage__settings"/>
         <AppsIcon className="searchPage__settings"/>
         <Avatar className="avatar" src="./images/RishirajBasuProfile.jpeg"/>
       </div>  
