@@ -8,9 +8,9 @@ import { useStateValue } from '../StateProvider';
 import {actionTypes} from '../reducer'
 
 
-function Search({hideButtons=false}) {
+function Search({hideButtons=false,searchTerm}) {
   // dispatch is used to shoot actions into the data layer
-  const [{}, dispatch]=useStateValue()
+  const [{term}, dispatch]=useStateValue()
   const [input,setInput]=useState('')
   // this is used to navigate to different pages
   const  navigate = useNavigate();
@@ -28,7 +28,7 @@ function Search({hideButtons=false}) {
     <form className='search' >
       <div className="search__input">
         <SearchOutlinedIcon className="search__inputIcon" />
-        <input value={input} onChange={e=>{setInput(e.target.value)}}/>
+        <input value={input} onChange={e=>{setInput(e.target.value)}} placeholder={searchTerm}/>
         <KeyboardVoiceOutlinedIcon/>
       </div>
      

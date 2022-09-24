@@ -10,6 +10,9 @@ import NewspaperOutlinedIcon from '@mui/icons-material/NewspaperOutlined';
 import MoreVertOutlinedIcon from '@mui/icons-material/MoreVertOutlined';
 import LocationOnOutlinedIcon from '@mui/icons-material/LocationOnOutlined';
 import { Image, LocalOfferOutlined } from "@mui/icons-material";
+import { Avatar } from "@mui/material";
+import SettingsIcon from '@mui/icons-material/Settings';
+import AppsIcon from '@mui/icons-material/Apps';
 function SearchPage() {
   // here we are getting the search input from the data layer (context API) as term
   const [{ term }, dispatch] = useStateValue();
@@ -17,7 +20,7 @@ function SearchPage() {
   const {data}= useGoogleSearch(term)
   // mocking the api call => not an actual api call but it stores the result from the previous api call and stores it in response.js which is passed to data via Response
   // const data = Response;
-  // console.log(data);
+  console.log(data);
   return (
     <div className="seachPage">
       <div className="seachPage__header">
@@ -29,7 +32,7 @@ function SearchPage() {
           />
         </Link>
         <div className="seachPage__headerBody">
-          <Search hideButtons />
+          <Search hideButtons searchTerm={term}/>
           <div className="searchPage__options">
             <div className="searchPage__optionsLeft">
               {/* 1 */}
@@ -66,22 +69,22 @@ function SearchPage() {
             <div className="searchPage__optionsRight">
               {/* 1 */}
               <div className="searchPage__option">
-                <Link to="/settings">Settings</Link>
-              </div>
-              {/* 2 */}
-              <div className="searchPage__option">
                 <Link to="/tools">Tools</Link>
               </div>
             </div>
           </div>
         </div>
+        <SettingsIcon className="searchPage__settings"/>
+        <AppsIcon className="searchPage__settings"/>
+        <Avatar className="avatar" src="./images/RishirajBasuProfile.jpeg"/>
       </div>  
+      <hr/>
       {/* if only the term exists then only show the results page else not - CONDITIONAL RENDERING*/}
         {term && (
           <div className="searchPage__results">
             <p className="searchPage__resultCount">
               {/* data?.searinfor... => this is called optional chaining */}
-              About {data?.searchInformation.formattedTotalResults} results {data?.searchInformation.formattedSearchTime} seconds for {term}
+              About {data?.searchInformation.formattedTotalResults} results ({data?.searchInformation.formattedSearchTime} seconds) 
             </p>
             {data?.items.map(item=>(
                   <div className="searchPage__result">

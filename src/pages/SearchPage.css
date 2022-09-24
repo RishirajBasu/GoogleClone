@@ -2,7 +2,6 @@
     object-fit: contain;
     height: 70px;
     margin-right: 50px;
-
 }
 .seachPage__header{
     display: flex;
@@ -13,13 +12,26 @@
     z-index: 100;
     align-items: flex-start;
     padding: 30px;
-    border-bottom: 1px solid lightgray;
-    margin-left: 20px;
+    /* border-bottom: 1px solid lightgray; */
+    margin-left: 100px;
+}
+.avatar{
+   float: right;
+   position: absolute;
+   bottom: 50;
+}   
+.searchPage__settings{
+    color: gray;
+    margin-top: 5px;
+    margin-right: 20px;
+}
+.seachPage__header .searchPage__logo{
+    height: 15vh;
 }
 /* from the search page > inside the search component> selecting the search class given to its parent form > selecting the search__input class and redefining all the styling that it has */
 .seachPage__headerBody> .search> .search__input{
     margin-top: 0;
-    width: 70%;
+    width: 60%;
     margin: unset;
     max-width: unset;
     box-shadow: 2px 2px 2px 2px #bcbdbe32;
@@ -58,7 +70,7 @@
 .searchPage__results{
     max-width: 650px;
     margin-top: 20px;
-    margin-left: 240px ;
+    margin-left: 150px ;
     margin-bottom: 100px;
 }
 .searchPage__result{

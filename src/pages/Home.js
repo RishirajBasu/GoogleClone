@@ -10,9 +10,6 @@ function Home() {
      <div className="home__header">
         <div className="home__headerLeft">
             {/* link */}
-            <Link to='/about'>about</Link>
-            {/* link */}
-            <Link to='/store'>Store</Link>
         </div>
         <div className="home__headerRight">
             {/* link */}
@@ -31,6 +28,17 @@ function Home() {
         <Search />
         {/* This will hide the buttons below the search bar */}
         {/* <Search hideButtons/> */}
+        {/* The languages */}
+        <div className="home__inputContainerLang">
+          <p>Google offered in:</p>
+          <a href='#'>Bengali</a>
+          <a href='#'>Hindi</a>
+          <a href='#'>Marathi</a>
+          <a href='#'>Tamil</a>
+          <a href='#'>Telugu</a>
+          <a href='#'>Gujarati</a>
+          <a href='#'>Malayali</a>
+        </div>
       </div>
      </div>
     </div>
