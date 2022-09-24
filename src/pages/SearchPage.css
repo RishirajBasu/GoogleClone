@@ -19,9 +19,10 @@
 /* from the search page > inside the search component> selecting the search class given to its parent form > selecting the search__input class and redefining all the styling that it has */
 .seachPage__headerBody> .search> .search__input{
     margin-top: 0;
-    width: 100%;
+    width: 70%;
     margin: unset;
     max-width: unset;
+    box-shadow: 2px 2px 2px 2px #bcbdbe32;
 }
 /* aligning the input field in line with the google logo */
 .seachPage__headerBody> .search{
@@ -53,4 +54,39 @@
 }
 .searchPage__option a{
     margin-left: 5px;
+}
+.searchPage__results{
+    max-width: 650px;
+    margin-top: 20px;
+    margin-left: 240px ;
+    margin-bottom: 100px;
+}
+.searchPage__result{
+    margin: 40px 0;
+}
+.searchPage__resultCount{
+    color: #70757a;
+    font-size: 14px;
+}
+.searchPage__resultTitle{
+    text-decoration: none;
+}
+.searchPage__resultTitle:hover{
+    text-decoration:underline;
+}
+.searchPage__resultTitle>h2{
+    font-weight: 550;
+}
+.searchPage__resultSnippet{
+    margin-top: 5px;
+}
+.searchPage__result .searchPage__resultLink{
+        color: black;
+        text-decoration: none;
+}
+.searchPage__resultImage{
+    object-fit: contain;
+    height: 20px;
+    width: 20px;
+    margin-right: 10px;
 }

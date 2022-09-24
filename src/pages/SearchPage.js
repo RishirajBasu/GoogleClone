@@ -2,7 +2,7 @@ import React from "react";
 import { useStateValue } from "../StateProvider";
 import useGoogleSearch from "../useGoogleSearch";
 import "./SearchPage.css";
-import Response from "../response";
+// import Response from "../response";
 import { Link } from "react-router-dom";
 import Search from "../components/Search";
 import SearchIcon from '@mui/icons-material/Search';
@@ -14,10 +14,10 @@ function SearchPage() {
   // here we are getting the search input from the data layer (context API) as term
   const [{ term }, dispatch] = useStateValue();
   // on taking the search term as input , this returns the response as a js object= This is the live api call
-  // const {data}= useGoogleSearch(term)
+  const {data}= useGoogleSearch(term)
   // mocking the api call => not an actual api call but it stores the result from the previous api call and stores it in response.js which is passed to data via Response
-  const data = Response;
-  console.log(data);
+  // const data = Response;
+  // console.log(data);
   return (
     <div className="seachPage">
       <div className="seachPage__header">
@@ -75,9 +75,35 @@ function SearchPage() {
             </div>
           </div>
         </div>
-        <div className="searchPage__results"></div>
+      </div>  
+      {/* if only the term exists then only show the results page else not - CONDITIONAL RENDERING*/}
+        {term && (
+          <div className="searchPage__results">
+            <p className="searchPage__resultCount">
+              {/* data?.searinfor... => this is called optional chaining */}
+              About {data?.searchInformation.formattedTotalResults} results {data?.searchInformation.formattedSearchTime} seconds for {term}
+            </p>
+            {data?.items.map(item=>(
+                  <div className="searchPage__result">
+                      <a className="searchPage__resultLink" href={item.link}>
+                        {item.pagemap?.cse_image?.length>0 && item.pagemap?.cse_image[0]?.src && (
+                          <img className='searchPage__resultImage' src={item.pagemap?.cse_image[0]?.src} />
+                        )}
+                        {item.displayLink}
+                      </a>
+                      <a className="searchPage__resultTitle" href={item.link}>
+                        <h2>{item.title}</h2>
+                      </a>
+                      <p className="searchPage__resultSnippet">
+                        {item.snippet}
+                      </p>
+                  </div>
+                )
+              )
+            }
+          </div>
+        )}
       </div>
-    </div>  
       );
 }
       export default SearchPage;
